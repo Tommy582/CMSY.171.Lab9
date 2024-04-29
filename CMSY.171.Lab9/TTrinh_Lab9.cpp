@@ -59,22 +59,3 @@ void header()
 		<< "\t\tWelcome to CMSY-171 Temperature Conversion Program\n\n";
 }
 
-void calcTemp(double temp)
-{
-	double fTemp = temp,	// used to calculate fahrenheit
-		kTemp = temp;		// used to calculate kelvin
-
-	cout << fixed << setprecision(1) << showpoint;
-	if (temp < MIN_TEMP)	// base case
-	{
-		// goodbye message
-		cout << "\n\nThank you for using the program\n";
-	}
-	else					// recursive cases
-	{
-		cout << setw(6) << temp << setw(10) << ((static_cast<double>(9) / 5 * fTemp) + 32)
-			<< setw(13) << kTemp + 273.15 << endl;
-		calcTemp(temp - INCREMENT); // recursive call
-	}
-
-}
